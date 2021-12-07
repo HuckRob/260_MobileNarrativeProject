@@ -136,17 +136,20 @@
     function update(buttonPressedID){
                 const runescapeStatServer = 'http://127.0.0.1:8080';
                 let ajaxParameters = {};
-                /* Enter your code below for AJAX parameters */
                 let table = buttonPressedID;
+                console.log(table);
                 let currentSkillSelected = [];
 
                 ajaxParameters = {
                     'listNumber' : table,
                 }
+                
                 const xhttp = new XMLHttpRequest();
                 xhttp.onload = function() {
+                    console.log("OnLoad ran");
+                    console.log(response.responseText);
                     console.log(JSON.parse(this.responseText));
-                    let response = JSON.parse(this.response);
+                    let response = JSON.parse(this.responseText);
                     response.level.forEach(element => {
                         currentSkillSelected.push(element);
                         console.log(currentSkillSelected);
