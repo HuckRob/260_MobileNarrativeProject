@@ -1,0 +1,66 @@
+h3{
+    text-align: center;
+    color: rgb(109,66,17);
+}
+
+p{color: wheat;}
+
+[class*="col-6"] {
+    border: 1px solid black;
+    margin: 3%;;
+}
+
+
+
+#mainBody{
+    background-color: black;
+    color: white;
+   /* background-image: url('Images/backgroundCenter.jpg'); */
+    background-repeat: repeat-y;
+    background-position: center center;
+}
+
+#contentContainer{
+
+}
+
+#title{
+    text-align: center;
+    color: rgb(233,213,147);
+}
+
+#titleContainer{
+    background-color: rgb(115,5,7);
+    border: 1px solid #FFFF00;
+    display: inherit;
+    height:60px;
+}
+
+.center{
+    
+}
+
+
+.buttonContainer{
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
+#mainContent{
+    /*background-image: url('Images/content_background.gif');*/
+    background-repeat: repeat-y;
+    background-position: center center;
+    overflow-y: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#runescapeSkillProgressionGraph{
+
+}
+
+.footer{
+    height: 50px;
+    background-color: blueviolet;
+    width: 100%;
+}

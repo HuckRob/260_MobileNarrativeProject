@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "GIMM 260 Mobile Narative Project Node.js Server",
+  "main": "osrsSkillServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Buentgen",
+  "license": "ISC"
+}

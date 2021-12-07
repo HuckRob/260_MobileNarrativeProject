@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <!-- Required for responsive websites -->
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>            
+        <title>RuneScape Level Progression</title>
+        <link rel='stylesheet' href='style.css'>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v6.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+
+    </head>
+
+    <body id = 'mainBody'>
+        <div id = 'contentContainer'>
+            <div id = 'titleContainer'>
+                <h2 id='title'>OldSchool RuneScape Stat Progression</h2>
+            </div>
+            <div id= 'mainContent'>
+                <!--Data Visualization Start-->
+                <div>
+                    <div id='topImage' class="w3-center">
+                        <img src="Images\hqdefault.jpg" alt="runescape logo image"/>
+                    </div>
+                    <h3>Compare two skills</h3>
+                        <div class='w3-padding-16'>
+                            <div class="w3-row">
+                                <div class="w3-col-12 w3-center ">
+                                    <h3 id="graph1Title">Graph of RunesScape Combat Skills</h3>
+                                    <div id="runescapeSkillProgressionGraph" ></div>
+                                </div>
+                            </div>
+                            <div class="w3-row"> 
+                                <div class="w3-col-12 w3-center buttonContainer">
+                                    <p>Buttons to Control the First Graph</p>
+                                    <button id ="graph1ButtonAttack1to25" >Attack 1-25</button>
+                                    <button id ="graph1ButtonAttack26to50" >Attack 26-50</button>
+                                    <button id ="graph1ButtonAttack51to75" >Attack51-75</button>
+                                    <button id ="graph1ButtonStrength1to25" >Strength 1-25</button>
+                                    <button id ="graph1ButtonStrength26to50" >Strength 26-50</button>
+                                    <button id ="graph1ButtonStrength51to75">Strength 51-75</button>
+                                    <button id ="graph1ButtonDefence1to25" >Defence 1-25</button>
+                                    <button id ="graph1ButtonDefence26to50" >Defence 26-50</button>
+                                    <button id ="graph1ButtonDefence51to75" >Defence 51-75</button>
+                                    <button id ="graph1ButtonDefence76to80" >Defence 76-80</button>
+                                    <button id ="graph1ButtonRanged1to25" >Ranged 1-25</button>
+                                    <button id ="graph1ButtonRanged26to50" >Ranged 26-50</button>
+                                    <button id ="graph1ButtonRanged51to76" >Ranged 51-76</button>
+                                    <button id ="graph1ButtonPrayer1to25" >Prayer 1-25</button>
+                                    <button id ="graph1ButtonPrayer26to50" >Prayer 26-50</button>
+                                    <button id ="graph1ButtonPrayer51to75" >Prayer 51-75</button>
+                                    <button id ="graph1ButtonPrayer76to90" >Prayer 76-90</button>
+                                    <button id ="graph1ButtonMagic1to25" >Magic 1-25</button>
+                                    <button id ="graph1ButtonMagic26to50" >Magic 26-50</button>
+                                    <button id ="graph1ButtonMagic51to75" >Magic 51-75</button>
+                                    <button id ="graph1ButtonMagic75to96" >Magic 75-96</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='w3-padding-16'>
+                            <div class="w3-row">
+                                <div class="w3-col-12 w3-center ">
+                                    <h3 id="graph2Title">Graph of RunesScape Combat Skills</h3>
+                                    <div id="runescapeSkillProgressionGraph2" ></div>
+                                </div>
+                            </div>
+                            <div class="w3-row"> 
+                                <div class="w3-col-12 w3-center buttonContainer">
+                                    <p>Buttons to Control the Second Graph</p>
+                                    <button id ="graph2ButtonAttack1to25" >Attack 1-25</button>
+                                    <button id ="graph2ButtonAttack26to50" >Attack 26-50</button>
+                                    <button id ="graph2ButtonAttack51to75" >Attack51-75</button>
+                                    <button id ="graph2ButtonStrength1to25" >Strength 1-25</button>
+                                    <button id ="graph2ButtonStrength26to50" >Strength 26-50</button>
+                                    <button id ="graph2ButtonStrength51to75">Strength 51-75</button>
+                                    <button id ="graph2ButtonDefence1to25" >Defence 1-25</button>
+                                    <button id ="graph2ButtonDefence26to50" >Defence 26-50</button>
+                                    <button id ="graph2ButtonDefence51to75" >Defence 51-75</button>
+                                    <button id ="graph2ButtonDefence76to80" >Defence 76-80</button>
+                                    <button id ="graph2ButtonRanged1to25" >Ranged 1-25</button>
+                                    <button id ="graph2ButtonRanged26to50" >Ranged 26-50</button>
+                                    <button id ="graph2ButtonRanged51to76" >Ranged 51-76</button>
+                                    <button id ="graph2ButtonPrayer1to25" >Prayer 1-25</button>
+                                    <button id ="graph2ButtonPrayer26to50" >Prayer 26-50</button>
+                                    <button id ="graph2ButtonPrayer51to75" >Prayer 51-75</button>
+                                    <button id ="graph2ButtonPrayer76to90" >Prayer 76-90</button>
+                                    <button id ="graph2ButtonMagic1to25" >Magic 1-25</button>
+                                    <button id ="graph2ButtonMagic26to50" >Magic 26-50</button>
+                                    <button id ="graph2ButtonMagic51to75" >Magic 51-75</button>
+                                    <button id ="graph2ButtonMagic75to96" >Magic 75-96</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                <!--Data Visualization End-->
+                <!--Narrative text Start-->
+                <div class="w3-center">
+                    <h3>What did I choose to collect data on</h3>
+                        <p>For this data analysis project I decided to collect data on the online game OldSchool RuneScape. I will sometimes refer to this game as OSRS(OldSchool RuneScape) through out this document. This game has been around since January 4th 2001. It is owned by the company Jagex. I choose to look into this game because I have been playing it on an off since I was in elementary school. Because of that I thought it would be interesting to research.</p>
+                    <h3>How I collected my data</h3>
+                        <p> To collect data I used the online Wikipedia specific to OSRS. There is countless information on there. It recently was acquired by Jagex which is the parent company of OldSchool RuneScape. The Wikipedia is said to be one of the best for a video game. Because RuneScape has been around for so long there has been a lot of data gathered on this game. If you look around the Oldschool Runescape Wiki or the RuneScape 3 Wiki you can find just about everything about these two games. If it has been discovered in the game or occurred in the game you can find information about it on one of these two wikipedia's.</p>
+                    <h3>What did i plan to find</h3>
+                        <p> By researching the skill unlocks for combat skills in OSRS I wanted to see if one skill has more content than another and by how much. I expected them to all be about the same but I was surprised to find out how many unlocks magic has from levels 1 to 99. I was surprised to find this information out. I would have thought it would have been attack because it feeds into strength and defense. But I guess that is possibly why it does not have as many unlocks because it has been divided among attack, strength, and defense.</p>
+                </div>
+                <!--Narrative text End-->
+            </div>
+            <div id = 'footer'>
+
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="runescapeStatWebsiteScript.js"></script>
+<script>
+    const isEmpty = (obj) => Object.keys(obj).length === 0;
+    const webpageButtons = [
+    "graph1ButtonAttack1to25","graph1ButtonAttack26to50","graph1ButtonAttack51to75",
+    "graph1ButtonStrength1to25","graph1ButtonStrength26to50","graph1ButtonStrength51to75",
+    "graph1ButtonDefence1to25","graph1ButtonDefence26to50","graph1ButtonDefence51to75","graph1ButtonDefence76to80",
+    "graph1ButtonRanged1to25","graph1ButtonRanged26to50","graph1ButtonRanged51to76",
+    "graph1ButtonPrayer1to25","graph1ButtonPrayer26to50","graph1ButtonPrayer51to75","graph1ButtonPrayer76to90",
+    "graph1ButtonMagic1to25","graph1ButtonMagic26to50","graph1ButtonMagic51to75","graph1ButtonMagic75to96",
+    "graph2ButtonAttack1to25","graph2ButtonAttack26to50","graph2ButtonAttack51to75",
+    "graph2ButtonStrength1to25","graph2ButtonStrength26to50","graph2ButtonStrength51to75","graph2ButtonDefence76to80",
+    "graph2ButtonDefence1to25","graph2ButtonDefence26to50","graph2ButtonDefence51to75",
+    "graph2ButtonRanged1to25","graph2ButtonRanged26to50","graph2ButtonRanged51to76",
+    "graph2ButtonMagic1to25","graph2ButtonMagic51to75","graph2ButtonMagic75to96"
+    ];
+
+    function update(buttonPressedID){
+                const runescapeStatServer = 'http://127.0.0.1:8080';
+                let ajaxParameters = {};
+                /* Enter your code below for AJAX parameters */
+                let table = buttonPressedID;
+                let currentSkillSelected = [];
+
+                ajaxParameters = {
+                    'listNumber' : table,
+                }
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    console.log(JSON.parse(this.responseText));
+                    let response = JSON.parse(this.response);
+                    response.level.forEach(element => {
+                        currentSkillSelected.push(element);
+                        console.log(currentSkillSelected);
+                    });
+                    console.log(response);
+                };
+               
+               
+                console.log("Server Request: GET, " + runescapeStatServer + (!isEmpty(ajaxParameters)));
+                xhttp.open("GET", runescapeStatServer + (!isEmpty(ajaxParameters) ? '?' + new URLSearchParams(ajaxParameters) : ''));
+                xhttp.send();
+
+
+            }
+
+
+    for(let i = 0; i < webpageButtons.length; i ++){
+        document.getElementById(webpageButtons[i]).addEventListener('click', (event) => {
+                update(i);
+            });
+    }
+
+    
+
+    
+</script>
