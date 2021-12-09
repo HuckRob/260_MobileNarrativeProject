@@ -147,13 +147,8 @@
                 const xhttp = new XMLHttpRequest();
                 xhttp.onload = function() {
                     console.log("OnLoad ran");
-                    console.log(response.responseText);
                     console.log(JSON.parse(this.responseText));
                     let response = JSON.parse(this.responseText);
-                    response.level.forEach(element => {
-                        currentSkillSelected.push(element);
-                        console.log(currentSkillSelected);
-                    });
                     console.log(response);
                 };
                
